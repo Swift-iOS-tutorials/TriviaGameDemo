@@ -21,6 +21,14 @@ struct QuestionView: View {
             }
             
             ProgressBar(progress: 40)
+            
+            
+            VStack(alignment: .leading, spacing: 20){
+                Text("The Axolotl is an amphibian that can spend its whole life in a larval state.")
+                    .font(.system(size: 20))
+                    .bold()
+                    .foregroundColor(.gray)
+            }
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
