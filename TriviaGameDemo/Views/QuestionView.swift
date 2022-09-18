@@ -14,7 +14,6 @@ struct QuestionView: View {
                 Text("Trivia Game")
                     .lilacTitle()
                 Spacer()
-                
                 Text ("1 out of 10")
                     .foregroundColor(Color("AccentColor"))
                     .fontWeight(.heavy)
@@ -24,15 +23,23 @@ struct QuestionView: View {
             
             
             VStack(alignment: .leading, spacing: 20){
-                Text("The Axolotl is an amphibian that can spend its whole life in a larval state.")
+                Text("Bulls are attracted to the color red")
                     .font(.system(size: 20))
                     .bold()
                     .foregroundColor(.gray)
+                
+                AnswerRow(answer: Answer(text: "False", isCorrect: true))
+                AnswerRow(answer: Answer(text: "True", isCorrect: false))
             }
+            
+            PrimaryButton(text: "Next")
+            
+            Spacer()
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.9843137254990196, green: 0.9294117647058824, blue: 0.847058823594118))
+        .navigationBarBackButtonHidden(true)
     }
 }
 
