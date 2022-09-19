@@ -21,7 +21,7 @@ struct Result: Decodable, Identifiable {
     var difficulty: String
     var question: String
     var correctAnswer: String
-    var incorrectAnswer: [String]
+    var incorrectAnswers: [String]
     
     var formattedQuestion: AttributedString{
         do {
@@ -35,7 +35,7 @@ struct Result: Decodable, Identifiable {
     var answers: [Answer] {
         do {
             let correct = [Answer(text: try AttributedString(markdown: correctAnswer), isCorrect: true)]
-            let incorrects =  try incorrectAnswer.map { answers in
+            let incorrects =  try incorrectAnswers.map { answers in
                 Answer(text: try AttributedString(markdown: answers), isCorrect: false)
             }
             let allAnswers = correct + incorrects
