@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ProgressBar: View {
     var progress: CGFloat
-    
     var body: some View {
         ZStack(alignment: .leading){
             Rectangle()
