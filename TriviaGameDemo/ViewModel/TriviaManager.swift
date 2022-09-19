@@ -37,6 +37,10 @@ class TriviaManager: ObservableObject {
             let decodededData = try decoder.decode(Trivia.self, from: data)
             
             DispatchQueue.main.async {
+                self.index = 0
+                self.score = 0
+                self.progress = 0.00
+                self.reachEnd = false
                 self.trivia = decodededData.results
                 self.length = self.trivia.count
                 self.setQuestion()
